@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Use useNavigate instead of useHistory
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
-import '../Dashboard.css'; // Importing advanced styling
+import '../Dashboard.css';
 import MinistryImage from '../Images/ministry-of-culture-republic-of-lebanon.jpg';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -24,6 +24,8 @@ const DashboardPage = () => {
         ]
     });
 
+    const navigate = useNavigate();  // Using useNavigate instead of useHistory
+
     useEffect(() => {
         // Simulate fetching data
         setUserData({ name: 'Admin', usersCount: 1500 });
@@ -34,24 +36,33 @@ const DashboardPage = () => {
         ]);
     }, []);
 
+    // Function to handle logout
+    const handleLogout = () => {
+        // Remove authentication data from localStorage or sessionStorage
+        localStorage.removeItem('authToken');  // If using token-based authentication
+        sessionStorage.removeItem('authToken'); // Remove token from session storage (if applicable)
+
+        // Optionally, clear state if using React Context or Redux for user state management
+        // Example: setUserData({});
+
+        // Redirect user to the login page
+        navigate('/'); // Use navigate() for redirection
+    };
+
     return (
         <div className="dashboard-container">
             {/* Sidebar */}
             <aside className="sidebar">
                 <div className="sidebar-header">
-                    <img
-                        src={MinistryImage}
-                        alt="Ministry Logo"
-                        className="sidebar-logo"
-                    />
+                    <img src={MinistryImage} alt="Ministry Logo" className="sidebar-logo" />
                     <h2 className="sidebar-title">Ministry of Culture</h2>
                 </div>
                 <nav className="nav-links">
                     <ul>
-                        <li><Link to="/applications" className="nav-link">Dashboard</Link></li>
-                        <li><Link to="/profile" className="nav-link">Profile</Link></li>
-                        <li><Link to="/settings" className="nav-link">Settings</Link></li>
-                        <li><Link to="/logout" className="nav-link logout">Logout</Link></li>
+                        <li><a href="/applications" className="nav-link">Applications Table</a></li>
+                        <li><a href="/profile" className="nav-link">Profile</a></li>
+                        <li><a href="/settings" className="nav-link">Settings</a></li>
+                        <li><button className="nav-link logout" onClick={handleLogout}>Logout</button></li>
                     </ul>
                 </nav>
             </aside>
@@ -61,11 +72,12 @@ const DashboardPage = () => {
                 <header className="header">
                     <h1 className="header-title">Welcome to the Ministry Dashboard</h1>
                     <div className="user-info">
-                        <button className="logout-button">Logout</button>
+                        {/* We added the onClick event handler here */}
+                        <button className="logout-button" onClick={handleLogout}>Logout</button>
                     </div>
                 </header>
 
-                {/* Dashboard Stats and Charts */}
+                {/* Cards Section */}
                 <section className="dashboard-cards">
                     <div className="card total-users">
                         <div className="card-header">
@@ -75,6 +87,7 @@ const DashboardPage = () => {
                             <p className="stat-number">{userData.usersCount}</p>
                         </div>
                     </div>
+
                     <div className="card active-projects">
                         <div className="card-header">
                             <h3>Active Projects</h3>
@@ -83,6 +96,7 @@ const DashboardPage = () => {
                             <p className="stat-number">{projectsData.length}</p>
                         </div>
                     </div>
+
                     <div className="card pending-requests">
                         <div className="card-header">
                             <h3>Pending Requests</h3>
@@ -99,7 +113,7 @@ const DashboardPage = () => {
                     <Line data={chartData} options={{ responsive: true, plugins: { title: { display: true, text: 'Monthly Project Trends' } } }} />
                 </section>
 
-                {/* Recent Alerts */}
+                {/* Alerts Section */}
                 <section className="recent-alerts">
                     <h2>Recent Alerts</h2>
                     <ul>

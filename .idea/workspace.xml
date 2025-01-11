@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2216a2d0-40e0-4bdc-883f-43aa74a49eba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ApplicationTable.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoginPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/firebase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ApplicationTable.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/DashboardPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/LoginPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/authService.js" afterDir="false" />
+    <list default="true" id="2216a2d0-40e0-4bdc-883f-43aa74a49eba" name="Changes" comment="Update # 1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ApplicationTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ApplicationTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/DashboardPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DashboardPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;andrewelkahwaji24&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/andrewelkahwaji24/Ministry_Culture.git&quot;,
+    &quot;accountId&quot;: &quot;6e5c73c9-2113-4aca-a2c4-d4fd9a340895&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -46,7 +54,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -98,11 +106,16 @@
       <updated>1736540072878</updated>
       <workItem from="1736540073977" duration="6143000" />
       <workItem from="1736579253027" duration="242000" />
-      <workItem from="1736579851333" duration="5303000" />
+      <workItem from="1736579851333" duration="6308000" />
+      <workItem from="1736589574539" duration="1141000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update # 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update # 1" />
   </component>
 </project>

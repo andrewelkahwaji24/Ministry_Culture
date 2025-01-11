@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , Navigate , useNavigate} from 'react-router-dom';
 import { collection, getDocs, addDoc, updateDoc, doc } from 'firebase/firestore'; // Modular imports
 import { db } from '../firebase'; // Importing the db
 import MinistryImage from '../Images/ministry-of-culture-republic-of-lebanon.jpg';
 import '../Dashboard.css';
 
+
+
 const ApplicationsTable = () => {
+    const navigate = useNavigate();
     const [applications, setApplications] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
@@ -125,6 +128,18 @@ const ApplicationsTable = () => {
         }
     };
 
+    const handleLogout = () => {
+        // Remove authentication data from localStorage or sessionStorage
+        localStorage.removeItem('authToken');  // If using token-based authentication
+        sessionStorage.removeItem('authToken'); // Remove token from session storage (if applicable)
+
+        // Optionally, clear state if using React Context or Redux for user state management
+        // Example: setUserData({});
+
+        // Redirect user to the login page
+        navigate('/'); // Use navigate() for redirection
+    };
+
     const handleAddTransferHistory = async (e) => {
         e.preventDefault();
         try {
@@ -230,10 +245,9 @@ const ApplicationsTable = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/logout" className="nav-link logout">
-                                <i className="fas fa-sign-out-alt"></i> <span>Logout</span>
-                            </Link>
+                            <button className="nav-link logout" onClick={handleLogout}>Logout</button>
                         </li>
+
                     </ul>
                 </nav>
             </aside>
