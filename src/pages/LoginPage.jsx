@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, signInWithEmailAndPassword } from '../firebase'; // Import Firebase auth and signInWithEmailAndPassword
 import '../LoginPage.css';
-import './DashboardPage'
+import './DashboardPage';
+import MinistryImage from '../Images/ministry-of-culture-republic-of-lebanon.jpg'
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ const LoginPage = () => {
     return (
         <div className="login-page">
             <div className="login-card">
-                <img src="../Images/ministry-of-culture-republic-of-lebanon.jpg" alt="Ministry Logo" className="login-logo" />
+                <img src={MinistryImage} alt="Ministry Logo" className="login-logo" />
                 <h2 className="login-title">Ministry of Culture - Admin Login</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-wrapper">

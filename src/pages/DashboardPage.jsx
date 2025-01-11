@@ -49,20 +49,30 @@ const DashboardPage = () => {
         navigate('/'); // Use navigate() for redirection
     };
 
+    function handleToggle() {
+
+    }
+
     return (
         <div className="dashboard-container">
             {/* Sidebar */}
             <aside className="sidebar">
-                <div className="sidebar-header">
-                    <img src={MinistryImage} alt="Ministry Logo" className="sidebar-logo" />
+                <div className="sidebar-header"><img src={MinistryImage} alt="Ministry Logo" className="sidebar-logo"/>
                     <h2 className="sidebar-title">Ministry of Culture</h2>
+                    <button className="toggle-btn" onClick={handleToggle}><i className="fas fa-bars"></i></button>
                 </div>
                 <nav className="nav-links">
                     <ul>
-                        <li><a href="/applications" className="nav-link">Applications Table</a></li>
-                        <li><a href="/profile" className="nav-link">Profile</a></li>
-                        <li><a href="/settings" className="nav-link">Settings</a></li>
-                        <li><button className="nav-link logout" onClick={handleLogout}>Logout</button></li>
+                        <li><a href="/applications" className="nav-link"><i className="fas fa-table nav-icon"></i><span>Applications Table</span></a>
+                        </li>
+                        <li><a href="/profile" className="nav-link"><i
+                            className="fas fa-user nav-icon"></i><span>Profile</span></a></li>
+                        <li><a href="/settings" className="nav-link"><i
+                            className="fas fa-cog nav-icon"></i><span>Settings</span></a></li>
+                        <li>
+                            <button className="nav-link logout" onClick={handleLogout}><i
+                                className="fas fa-sign-out-alt nav-icon"></i><span>Logout</span></button>
+                        </li>
                     </ul>
                 </nav>
             </aside>
@@ -110,7 +120,10 @@ const DashboardPage = () => {
                 {/* Line Chart */}
                 <section className="chart-section">
                     <h2>Project Activity</h2>
-                    <Line data={chartData} options={{ responsive: true, plugins: { title: { display: true, text: 'Monthly Project Trends' } } }} />
+                    <Line data={chartData} options={{
+                        responsive: true,
+                        plugins: {title: {display: true, text: 'Monthly Project Trends'}}
+                    }}/>
                 </section>
 
                 {/* Alerts Section */}

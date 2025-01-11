@@ -215,39 +215,30 @@ const ApplicationsTable = () => {
         );
     }
 
+    function handleToggle() {
+
+    }
+
     return (
         <div className="dashboard-container">
             {/* Sidebar */}
             <aside className="sidebar">
-                <div className="sidebar-header">
-                    <img
-                        src={MinistryImage}
-                        alt="Ministry Logo"
-                        className="sidebar-logo"
-                    />
+                <div className="sidebar-header"><img src={MinistryImage} alt="Ministry Logo" className="sidebar-logo"/>
                     <h2 className="sidebar-title">Ministry of Culture</h2>
+                    <button className="toggle-btn" onClick={handleToggle}><i className="fas fa-bars"></i></button>
                 </div>
                 <nav className="nav-links">
                     <ul>
-                        <li>
-                            <Link to="/dashboard" className="nav-link">
-                                <i className="fas fa-tachometer-alt"></i> <span>Dashboard</span>
-                            </Link>
+                        <li><a href="/applications" className="nav-link"><i className="fas fa-table nav-icon"></i><span>Applications Table</span></a>
                         </li>
+                        <li><a href="/profile" className="nav-link"><i
+                            className="fas fa-user nav-icon"></i><span>Profile</span></a></li>
+                        <li><a href="/settings" className="nav-link"><i
+                            className="fas fa-cog nav-icon"></i><span>Settings</span></a></li>
                         <li>
-                            <Link to="/profile" className="nav-link">
-                                <i className="fas fa-user"></i> <span>Profile</span>
-                            </Link>
+                            <button className="nav-link logout" onClick={handleLogout}><i
+                                className="fas fa-sign-out-alt nav-icon"></i><span>Logout</span></button>
                         </li>
-                        <li>
-                            <Link to="/settings" className="nav-link">
-                                <i className="fas fa-cog"></i> <span>Settings</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <button className="nav-link logout" onClick={handleLogout}>Logout</button>
-                        </li>
-
                     </ul>
                 </nav>
             </aside>

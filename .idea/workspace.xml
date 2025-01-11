@@ -7,8 +7,8 @@
     <list default="true" id="2216a2d0-40e0-4bdc-883f-43aa74a49eba" name="Changes" comment="Update # 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ApplicationTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ApplicationTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/DashboardPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DashboardPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,8 +107,17 @@
       <workItem from="1736540073977" duration="6143000" />
       <workItem from="1736579253027" duration="242000" />
       <workItem from="1736579851333" duration="6308000" />
-      <workItem from="1736589574539" duration="1141000" />
+      <workItem from="1736589574539" duration="1823000" />
     </task>
+    <task id="LOCAL-00001" summary="Update # 1">
+      <option name="closed" value="true" />
+      <created>1736594701212</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736594701212</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
