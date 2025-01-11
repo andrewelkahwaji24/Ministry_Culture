@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import ApplicationTable from "./pages/ApplicationTable"; // Make sure this path is correct
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
           <Route path="/" element={<LoginPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/applications" element={<ApplicationTable />} />
-          {/* Add other routes, like Dashboard */}
+            <Route path="/settings" element={<Settings />}></Route>
+            {/* Add other routes, like Dashboard */}
         </Routes>
       </Router>
   );

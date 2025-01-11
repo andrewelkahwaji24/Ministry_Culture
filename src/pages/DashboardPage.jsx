@@ -67,7 +67,7 @@ const DashboardPage = () => {
                         </li>
                         <li><a href="/profile" className="nav-link"><i
                             className="fas fa-user nav-icon"></i><span>Profile</span></a></li>
-                        <li><a href="/settings" className="nav-link"><i
+                        <li><a href="/Settings" className="nav-link"><i
                             className="fas fa-cog nav-icon"></i><span>Settings</span></a></li>
                         <li>
                             <button className="nav-link logout" onClick={handleLogout}><i

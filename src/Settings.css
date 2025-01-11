@@ -1,0 +1,342 @@
+/* General Page Layout */
+html, body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.settings-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    flex-direction: column;
+}
+
+.settings-page h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #444;
+}
+
+/* Form Section */
+form {
+    width: 100%;
+    max-width: 800px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Form Elements */
+.settings-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.settings-section h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #3f80c1;
+    background-color: #fff;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #3f80c1;
+}
+
+/* Buttons */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #3f80c1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2e65a6;
+}
+
+button[type="submit"]:disabled {
+    background-color: #a3b1c2;
+    cursor: not-allowed;
+}
+
+/* Success and Error Messages */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Custom Select Dropdown */
+select {
+    background-color: #f9f9f9;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: #3f80c1;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Flexbox Layout for Form Items */
+.settings-section > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Account Deactivation Section */
+.account-deactivation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-deactivation label {
+    font-size: 1rem;
+}
+
+.account-deactivation input {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Inputs and Checkboxes Flexbox Arrangement */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    align-self: flex-start;
+}
+
+/* Form Section Styles */
+.settings-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+}
+
+.settings-section:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .settings-page {
+        padding: 15px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .settings-section {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+
+    .settings-section h3 {
+        font-size: 1.2rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        font-size: 0.9rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .account-deactivation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .account-deactivation input {
+        margin-top: 5px;
+    }
+}
+
+/* Dark Mode Styling */
+body.dark-mode .settings-page {
+    background-color: #181818;
+    color: #fff;
+}
+
+body.dark-mode form {
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+}
+
+body.dark-mode label,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #ccc;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"],
+body.dark-mode select {
+    background-color: #444;
+    border-color: #555;
+    color: #fff;
+}
+
+body.dark-mode input[type="text"]:focus,
+body.dark-mode input[type="email"]:focus,
+body.dark-mode input[type="password"]:focus,
+body.dark-mode select:focus {
+    border-color: #3f80c1;
+    background-color: #333;
+}
+
+body.dark-mode button[type="submit"] {
+    background-color: #3f80c1;
+}
+
+body.dark-mode button[type="submit"]:hover {
+    background-color: #2e65a6;
+}
+
+/* Dark Mode Success/Error Messages */
+body.dark-mode .success-message {
+    background-color: #3c763d;
+    color: #d4edda;
+    border: 1px solid #d6e9c6;
+}
+
+body.dark-mode .error-message {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+/* Hover Effects on Inputs and Selects */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+select:hover {
+    border-color: #3f80c1;
+}
+
+input[type="checkbox"]:hover {
+    background-color: #3498db;
+}
+
+input[type="checkbox"]:checked:hover {
+    background-color: #2980b9;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3f80c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2e65a6;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Input Focus Style */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+    background-color: #ffffff;
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(63, 128, 193, 0.5);
+}
