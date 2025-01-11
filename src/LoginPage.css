@@ -1,0 +1,273 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Login Page Layout */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4c6ef5, #2a4dff);
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Login Card */
+.login-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+    position: relative;
+}
+
+/* Logo Styling */
+.login-logo {
+    width: 100px; /* Adjust size accordingly */
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade In Effect for Logo */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Slide In Animation for Login Card */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-title {
+    font-size: 26px;
+    color: #003366;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Input Fields */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #2a4dff;
+    box-shadow: 0 0 8px rgba(42, 77, 255, 0.5);
+}
+
+.input-field::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 16px;
+    background-color: #2a4dff;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #003366;
+    transform: scale(1.05);
+}
+
+.submit-button:active {
+    background-color: #001f3d;
+    transform: scale(1);
+}
+
+/* Error Message */
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Links */
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: #2a4dff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #003366;
+}
+
+.register-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.register-link a {
+    color: #2a4dff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    color: #003366;
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Background Decoration (Gradient, Shadows, etc.) */
+.login-page::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid #2a4dff;
+    border-radius: 12px;
+    opacity: 0.1;
+    z-index: -2;
+}
+
+/* Floating Effect on Login Card */
+.login-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-card {
+        width: 80%;
+        padding: 30px;
+    }
+
+    .login-title {
+        font-size: 22px;
+    }
+
+    .submit-button {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .input-field {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-card {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .login-title {
+        font-size: 20px;
+    }
+
+    .input-field,
+    .submit-button {
+        padding: 12px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .login-title {
+        font-size: 18px;
+    }
+
+    .login-card {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .input-field {
+        padding: 10px;
+    }
+
+    .submit-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .error-message {
+        font-size: 12px;
+    }
+}
