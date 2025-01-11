@@ -5,6 +5,7 @@ import DashboardPage from "./pages/DashboardPage";
 import ApplicationTable from "./pages/ApplicationTable"; // Make sure this path is correct
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Settings from "./pages/Settings";
+import Decisions from "./pages/Decisions";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/applications" element={<ApplicationTable />} />
             <Route path="/settings" element={<Settings />}></Route>
+            <Route path="/decisions" element={<Decisions />}></Route>
             {/* Add other routes, like Dashboard */}
         </Routes>
       </Router>

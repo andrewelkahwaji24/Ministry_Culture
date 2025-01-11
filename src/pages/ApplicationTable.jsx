@@ -193,11 +193,12 @@ const ApplicationsTable = () => {
         setCurrentPage(1); // Reset to page 1 whenever the search term changes
     };
 
-    const filteredApplications = applications.filter(application =>
-        application.applicationId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        application.addressedTo.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        application.addressedFrom.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredApplications = searchTerm
+        ? applications.filter(application =>
+            (application.applicationId || '').toLowerCase() === searchTerm.toLowerCase()
+        )
+        : applications; // Show all applications if searchTerm is empty
+
 
     const indexOfLastApp = currentPage * applicationsPerPage;
     const indexOfFirstApp = indexOfLastApp - applicationsPerPage;
@@ -223,31 +224,57 @@ const ApplicationsTable = () => {
         <div className="dashboard-container">
             {/* Sidebar */}
             <aside className="sidebar">
-                <div className="sidebar-header"><img src={MinistryImage} alt="Ministry Logo" className="sidebar-logo"/>
-                    <h2 className="sidebar-title">Ministry of Culture</h2>
-                    <button className="toggle-btn" onClick={handleToggle}><i className="fas fa-bars"></i></button>
+                <div className="sidebar-header">
+                    <h2>وزارة الثقافة - الإدارة المشتركة</h2>
                 </div>
-                <nav className="nav-links">
+                <nav className="sidebar-nav">
                     <ul>
-                        <li><a href="/applications" className="nav-link"><i className="fas fa-table nav-icon"></i><span>Applications Table</span></a>
-                        </li>
-                        <li><a href="/profile" className="nav-link"><i
-                            className="fas fa-user nav-icon"></i><span>Profile</span></a></li>
-                        <li><a href="/settings" className="nav-link"><i
-                            className="fas fa-cog nav-icon"></i><span>Settings</span></a></li>
                         <li>
-                            <button className="nav-link logout" onClick={handleLogout}><i
-                                className="fas fa-sign-out-alt nav-icon"></i><span>Logout</span></button>
+                            <a href="/dashboard">
+                                <i className="icon fas fa-home"></i>
+                                لوحة القيادة
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/applications">
+                                <i className="icon fas fa-table"></i>
+                                الطلبات                            </a>
+                        </li>
+                        <li>
+                            <a href="/decisions">
+                                <i className="icon fas fa-gavel"></i>
+                                القرارات
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/profile">
+                                <i className="icon fas fa-user"></i>
+                                الملف الشخصي
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/settings">
+                                <i className="icon fas fa-cog"></i>
+                                الإعدادات
+                            </a>
                         </li>
                     </ul>
                 </nav>
+                <div className="sidebar-footer">
+                    <button onClick={handleLogout}>
+                        <i className="icon fas fa-sign-out-alt"></i>
+                        تسجيل الخروج
+                    </button>
+                </div>
             </aside>
 
 
             {/* Main Content */}
             <main className="main-content">
                 <header className="header">
-                    <h1 className="header-title">Applications Overview</h1>
+                    <h1 className="header-title">نظرة عامة على الطلبات</h1>
                 </header>
 
                 {/* Search Bar */}
@@ -255,15 +282,16 @@ const ApplicationsTable = () => {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Search by Application ID, To, From"
+                        placeholder="البحث برقم الطلب"
                         value={searchTerm}
                         onChange={handleSearchChange}
                     />
                 </div>
 
+
                 {/* Add Application Button */}
                 <button className="btn btn-primary mb-3" onClick={() => setShowModal(true)}>
-                    Add New Application
+                    إضافة طلب جديد
                 </button>
 
                 <div className="card table-card">
@@ -271,14 +299,14 @@ const ApplicationsTable = () => {
                         <table className="table applications-table">
                             <thead className="table-light">
                             <tr>
-                                <th>Application ID</th>
-                                <th>Addressed To</th>
-                                <th>Addressed From</th>
-                                <th>Description</th>
-                                <th>Date of Reception</th>
-                                <th>Transfer History</th>
-                                <th>Actions</th>
-                                <th>Download Link</th>
+                                <th>رقم الطلب</th>
+                                <th>موجه إلى</th>
+                                <th>موجه من</th>
+                                <th>الوصف</th>
+                                <th>تاريخ الاستلام</th>
+                                <th>تاريخ التحويل</th>
+                                <th>الإجراءات</th>
+                                <th>رابط التحميل</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -374,7 +402,7 @@ const ApplicationsTable = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className="modal-body">
                                     <div className="mb-3">
-                                        <label htmlFor="applicationId" className="form-label">Application ID</label>
+                                        <label htmlFor="applicationId" className="form-label">رقم الطلب</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -386,7 +414,7 @@ const ApplicationsTable = () => {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="addressedTo" className="form-label">Addressed To</label>
+                                        <label htmlFor="addressedTo" className="form-label">موجه إلى</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -398,7 +426,7 @@ const ApplicationsTable = () => {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="addressedFrom" className="form-label">Addressed From</label>
+                                        <label htmlFor="addressedFrom" className="form-label">موجه من</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -410,7 +438,7 @@ const ApplicationsTable = () => {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="description" className="form-label">Description</label>
+                                        <label htmlFor="description" className="form-label">الوصف</label>
                                         <textarea
                                             className="form-control"
                                             id="description"
@@ -421,8 +449,7 @@ const ApplicationsTable = () => {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="dateOfReception" className="form-label">Date of
-                                            Reception</label>
+                                        <label htmlFor="dateOfReception" className="form-label">تاريخ الاستلام</label>
                                         <input
                                             type="date"
                                             className="form-control"
@@ -459,7 +486,6 @@ const ApplicationsTable = () => {
                     </div>
                 </div>
             )}
-
             {/* Modal for Transfer History Details */}
             {showTransferHistoryModal && (
                 <div className="modal show" style={{display: 'block'}} role="dialog">
@@ -477,19 +503,19 @@ const ApplicationsTable = () => {
                                 <table className="table">
                                     <thead>
                                     <tr>
-                                        <th>Date</th>
-                                        <th>Location</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
+                                        <th>التاريخ</th>
+                                        <th>الموقع</th>
+                                        <th>الحالة</th>
+                                        <th>الإجراءات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {currentApplication.transferHistory.length > 0 ? (
                                         currentApplication.transferHistory.map((transfer, index) => (
                                             <tr key={index}>
-                                                <td>{transfer.date || 'N/A'}</td>
-                                                <td>{transfer.location || 'N/A'}</td>
-                                                <td>{transfer.status || 'N/A'}</td>
+                                                <td>{transfer.date || 'غير متوفر'}</td>
+                                                <td>{transfer.location || 'غير متوفر'}</td>
+                                                <td>{transfer.status || 'غير متوفر'}</td>
                                                 <td>
                                                     <button
                                                         className="btn btn-warning"
@@ -502,7 +528,7 @@ const ApplicationsTable = () => {
                                         ))
                                     ) : (
                                         <tr>
-                                            <td colSpan="4">No transfer history available.</td>
+                                            <td colSpan="4">لا يوجد تاريخ تحويل متاح</td>
                                         </tr>
                                     )}
 
@@ -511,7 +537,7 @@ const ApplicationsTable = () => {
                                 <form
                                     onSubmit={isTransferEditMode ? handleUpdateTransferHistory : handleAddTransferHistory}>
                                     <div className="mb-3">
-                                        <label htmlFor="date" className="form-label">Date</label>
+                                        <label htmlFor="date" className="form-label">تاريخ</label>
                                         <input
                                             type="date"
                                             className="form-control"
@@ -523,7 +549,7 @@ const ApplicationsTable = () => {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="location" className="form-label">Location</label>
+                                        <label htmlFor="location" className="form-label">الموقع</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -535,7 +561,7 @@ const ApplicationsTable = () => {
                                         />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="status" className="form-label">Status</label>
+                                        <label htmlFor="status" className="form-label">الحالة</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -553,7 +579,7 @@ const ApplicationsTable = () => {
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary"
-                                        onClick={handleTransferHistoryClose}>Close
+                                        onClick={handleTransferHistoryClose}>إغلاق
                                 </button>
                             </div>
                         </div>
