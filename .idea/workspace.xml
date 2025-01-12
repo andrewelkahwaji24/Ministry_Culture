@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2216a2d0-40e0-4bdc-883f-43aa74a49eba" name="Changes" comment="Update # 1">
-      <change afterPath="$PROJECT_DIR$/public/_redirects" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Decisions.jsx" afterDir="false" />
+    <list default="true" id="2216a2d0-40e0-4bdc-883f-43aa74a49eba" name="Changes" comment="Update # 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ApplicationTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ApplicationTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/DashboardPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DashboardPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ApplicationTable.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ApplicationTable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoginPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +116,10 @@
       <workItem from="1736596989651" duration="1960000" />
       <workItem from="1736599069537" duration="15000" />
       <workItem from="1736603529499" duration="1057000" />
-      <workItem from="1736611655802" duration="4830000" />
+      <workItem from="1736611655802" duration="4993000" />
+      <workItem from="1736670574963" duration="300000" />
+      <workItem from="1736673273243" duration="1280000" />
+      <workItem from="1736681392484" duration="1021000" />
     </task>
     <task id="LOCAL-00001" summary="Update # 1">
       <option name="closed" value="true" />
@@ -144,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736596799446</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update # 2">
+      <option name="closed" value="true" />
+      <created>1736629419660</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736629419660</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +161,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update # 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update # 1" />
+    <MESSAGE value="Update # 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update # 2" />
   </component>
 </project>

@@ -32,12 +32,12 @@ const LoginPage = () => {
         <div className="login-page">
             <div className="login-card">
                 <img src={MinistryImage} alt="Ministry Logo" className="login-logo" />
-                <h2 className="login-title">Ministry of Culture - Admin Login</h2>
+                <h2 className="login-title">الإدارة المشتركة لوزارة الثقافة - تسجيل الدخول</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="input-wrapper">
                         <input
                             type="email"
-                            placeholder="Enter your email"
+                            placeholder="أدخل بريدك الإلكتروني"
                             className="input-field"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -46,17 +46,16 @@ const LoginPage = () => {
                     <div className="input-wrapper">
                         <input
                             type="password"
-                            placeholder="Enter your password"
+                            placeholder="أدخل كلمة المرور الخاصة بك"
                             className="input-field"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <button type="submit" className="submit-button">Login</button>
+                    <button type="submit" className="submit-button">تسجيل الدخول</button>
                 </form>
                 {error && <p className="error-message">{error}</p>}
-                <a href="/forgot-password" className="forgot-password">Forgot password?</a>
-                <div className="register-link">Don't have an account? <a href="/register">Register</a></div>
+                <a href="/forgot-password" className="forgot-password">هل نسيت كلمة السر؟</a>
             </div>
         </div>
     );

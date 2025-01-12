@@ -1,10 +1,12 @@
 .App {
   text-align: center;
+  padding: 10px; /* Add some padding for mobile devices */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  max-width: 100%; /* Ensures the logo doesn't overflow */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -22,12 +24,42 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px; /* Padding for larger screens */
+}
+
+/* Adjust text size for different screen widths */
+@media (max-width: 600px) {
+  .App-header {
+    font-size: 16px; /* Slightly smaller font for smaller screens */
+  }
+  .App-logo {
+    height: 30vmin; /* Smaller logo size for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    font-size: 18px; /* Adjust text for tablet-sized devices */
+  }
+  .App-logo {
+    height: 35vmin; /* Adjust logo size for tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .App-header {
+    font-size: calc(10px + 1.5vmin); /* Adjust text for laptops/desktops */
+  }
+  .App-logo {
+    height: 45vmin; /* Larger logo size for desktops */
+  }
 }
 
 .App-link {
   color: #61dafb;
 }
 
+/* Keyframe for logo spin animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
